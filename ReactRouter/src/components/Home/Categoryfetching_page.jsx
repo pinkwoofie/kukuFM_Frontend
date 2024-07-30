@@ -13,7 +13,7 @@ const CategoryPage = () => {
   useEffect(() => {
     const fetchAudiobooks = async () => {
       try {
-        const response = await fetch(`http://localhost:5430/api/v1/audiobooks?category=${id}`);
+        const response = await fetch(`https://mern-stack-website-308a.onrender.com/api/v1/audiobooks?category=${id}`);
         if (!response.ok) throw new Error('Failed to fetch');
         const data = await response.json();
 
@@ -33,7 +33,7 @@ const CategoryPage = () => {
   const handleReviewSubmit = async (audiobookId, rating, comment) => {
     try {
       console.log(`token  ${yourAuthToken}`);
-      const response = await fetch(`http://localhost:5430/api/v1/audiobooks/${audiobookId}/reviews`, {
+      const response = await fetch(`https://mern-stack-website-308a.onrender.com/api/v1/audiobooks/${audiobookId}/reviews`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
